@@ -130,12 +130,20 @@ const curriculum = [
     },
 ];
 
-export default function Sidebar() {
+interface SidebarProps {
+    isCollapsed?: boolean;
+    toggle?: () => void;
+}
+
+export default function Sidebar({ isCollapsed = false, toggle }: SidebarProps) {
     const pathname = usePathname();
     const [expandedSections, setExpandedSections] = useState<string[]>(["foundations"]);
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const toggleSection = (sectionId: string) => {
+        if (isCollapsed && toggle) {
+            toggle(); // Expand sidebar if clicking while collapsed
+        }
         setExpandedSections((prev) =>
             prev.includes(sectionId)
                 ? prev.filter((id) => id !== sectionId)
@@ -163,52 +171,62 @@ export default function Sidebar() {
 
             {/* Sidebar */}
             <aside
-                className={`fixed left-0 top-16 h-[calc(100vh-4rem)] w-72 border-r overflow-y-auto z-30 transition-transform lg:translate-x-0 ${mobileOpen ? "translate-x-0" : "-translate-x-full"
-                    }`}
+                className={`fixed left-0 top-16 h-[calc(100vh-4rem)] border-r overflow-y-auto z-30 transition-all duration-300 ease-in-out lg:translate-x-0 ${mobileOpen ? "translate-x-0 w-72" : "-translate-x-full lg:translate-x-0"} ${isCollapsed ? "lg:w-20" : "lg:w-72"}`}
                 style={{
                     backgroundColor: '#FFFBF7',
                     borderColor: '#E8DDD0'
                 }}
             >
-                <div className="p-4">
-                    <h2 className="text-xs font-semibold uppercase tracking-wider mb-4" style={{ color: '#8B7355' }}>
-                        Curriculum
-                    </h2>
+                {/* Desktop Collapse Toggle */}
+                <button
+                    onClick={toggle}
+                    className="hidden lg:flex absolute -right-3 top-6 w-6 h-6 bg-white border border-[#E8DDD0] rounded-full items-center justify-center text-[#8B7355] shadow-sm hover:text-[#D4823A] hover:border-[#D4823A] z-50 transition-colors"
+                >
+                    {isCollapsed ? <ChevronRight className="w-3 h-3" /> : <ChevronDown className="w-3 h-3 rotate-90" />}
+                </button>
+
+                <div className={`p-4 ${isCollapsed ? 'px-2' : ''}`}>
+                    {!isCollapsed && (
+                        <h2 className="text-xs font-semibold uppercase tracking-wider mb-4 px-2" style={{ color: '#8B7355' }}>
+                            Curriculum
+                        </h2>
+                    )}
 
                     <div className="space-y-1">
                         {curriculum.map((section) => {
                             const Icon = section.icon;
+                            // If collapsed, don't show expanded items visually, but keep state
                             const isExpanded = expandedSections.includes(section.id);
 
                             return (
-                                <div key={section.id}>
+                                <div key={section.id} className="relative group">
                                     {/* Section header */}
                                     <button
                                         onClick={() => toggleSection(section.id)}
-                                        className="w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all group"
+                                        className={`w-full flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${isCollapsed ? 'justify-center' : ''}`}
                                         style={{
-                                            backgroundColor: isExpanded ? '#F5EDE4' : 'transparent',
+                                            backgroundColor: (isExpanded && !isCollapsed) ? '#F5EDE4' : 'transparent',
                                         }}
-                                        onMouseEnter={(e) => {
-                                            if (!isExpanded) e.currentTarget.style.backgroundColor = '#FAF5F0';
-                                        }}
-                                        onMouseLeave={(e) => {
-                                            if (!isExpanded) e.currentTarget.style.backgroundColor = 'transparent';
-                                        }}
+                                        title={isCollapsed ? section.title : undefined}
                                     >
-                                        <Icon className="w-5 h-5" style={{ color: section.color }} />
-                                        <span className="flex-1 text-left font-medium text-sm" style={{ color: '#5D4E3C' }}>
-                                            {section.title}
-                                        </span>
-                                        {isExpanded ? (
-                                            <ChevronDown className="w-4 h-4" style={{ color: '#8B7355' }} />
-                                        ) : (
-                                            <ChevronRight className="w-4 h-4" style={{ color: '#8B7355' }} />
+                                        <Icon className={`w-5 h-5 flex-shrink-0`} style={{ color: section.color }} />
+
+                                        {!isCollapsed && (
+                                            <>
+                                                <span className="flex-1 text-left font-medium text-sm truncate" style={{ color: '#5D4E3C' }}>
+                                                    {section.title}
+                                                </span>
+                                                {isExpanded ? (
+                                                    <ChevronDown className="w-4 h-4 flex-shrink-0" style={{ color: '#8B7355' }} />
+                                                ) : (
+                                                    <ChevronRight className="w-4 h-4 flex-shrink-0" style={{ color: '#8B7355' }} />
+                                                )}
+                                            </>
                                         )}
                                     </button>
 
                                     {/* Lessons */}
-                                    {isExpanded && (
+                                    {(isExpanded && !isCollapsed) && (
                                         <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: '#E8DDD0' }}>
                                             {section.lessons.map((lesson, idx) => {
                                                 const active = isActive(lesson.href);
@@ -240,17 +258,16 @@ export default function Sidebar() {
                     </div>
 
                     {/* Download PDF */}
-                    <div className="mt-8 pt-6 border-t" style={{ borderColor: '#E8DDD0' }}>
+                    <div className={`mt-8 pt-6 border-t ${isCollapsed ? 'flex justify-center' : ''}`} style={{ borderColor: '#E8DDD0' }}>
                         <a
                             href="/pdf/main_notes.pdf"
                             download
-                            className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all"
+                            className={`flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all ${isCollapsed ? 'justify-center' : ''}`}
                             style={{ color: '#5D4E3C' }}
-                            onMouseEnter={(e) => e.currentTarget.style.backgroundColor = '#F5EDE4'}
-                            onMouseLeave={(e) => e.currentTarget.style.backgroundColor = 'transparent'}
+                            title="Download PDF"
                         >
                             <FileDown className="w-5 h-5" style={{ color: '#D4823A' }} />
-                            <span className="font-medium text-sm">Download PDF</span>
+                            {!isCollapsed && <span className="font-medium text-sm">Download PDF</span>}
                         </a>
                     </div>
                 </div>

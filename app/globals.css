@@ -58,7 +58,7 @@ h6 {
 /* Markdown content styles - warm & readable */
 .markdown-content {
   line-height: 1.9;
-  font-size: 1.15rem;
+  font-size: 1.35rem;
 }
 
 .markdown-content h1 {
@@ -74,10 +74,10 @@ h6 {
 
 .markdown-content h2 {
   font-family: var(--font-heading);
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   font-weight: 700;
   color: var(--warm-coffee);
-  margin-bottom: 1rem;
+  margin-bottom: 1.25rem;
   margin-top: 2rem;
 }
 
