@@ -9,120 +9,130 @@ import {
     BookOpen,
     Brain,
     TrendingUp,
-    Globe,
     Layers,
     Sparkles,
+    BarChart3,
     MessageSquare,
     Clock,
-    Gamepad2,
-    Lightbulb,
+    Shield,
     FileDown,
     Menu,
 } from "lucide-react";
 
 const curriculum = [
     {
-        id: "1-introduction",
-        title: "Introduction",
+        id: "foundations",
+        title: "Foundations",
         icon: BookOpen,
         color: "#D4823A",
         lessons: [
-            { id: "1-intro-to-ML", title: "Introduction to ML" },
-            { id: "2-history-of-ML", title: "History of ML" },
-            { id: "3-fairness", title: "Fairness in ML" },
-            { id: "4-techniques-of-ML", title: "ML Techniques" },
+            { id: "overview", title: "ML Overview", href: "/learn/foundations/overview" },
+            { id: "math", title: "Math Prerequisites", href: "/learn/foundations/math" },
+            { id: "python", title: "Python for ML", href: "/learn/foundations/python" },
         ],
     },
     {
-        id: "2-regression",
+        id: "regression",
         title: "Regression",
         icon: TrendingUp,
         color: "#8FA68A",
         lessons: [
-            { id: "1-Tools", title: "Tools of the Trade" },
-            { id: "2-Data", title: "Managing Data" },
-            { id: "3-Linear", title: "Linear Regression" },
-            { id: "4-Logistic", title: "Logistic Regression" },
+            { id: "linear", title: "Linear Regression", href: "/learn/regression/linear" },
+            { id: "logistic", title: "Logistic Regression", href: "/learn/regression/logistic" },
+            { id: "polynomial", title: "Polynomial Regression", href: "/learn/regression/polynomial" },
+            { id: "glm", title: "GLMs", href: "/learn/regression/glm" },
         ],
     },
     {
-        id: "3-web-app",
-        title: "Web App",
-        icon: Globe,
-        color: "#5A8A88",
-        lessons: [{ id: "1-Web-App", title: "Build a Web App" }],
-    },
-    {
-        id: "4-classification",
+        id: "classification",
         title: "Classification",
         icon: Layers,
         color: "#C4897A",
         lessons: [
-            { id: "1-Introduction", title: "Classification Intro" },
-            { id: "2-Classifiers-1", title: "Classifiers Part 1" },
-            { id: "3-Classifiers-2", title: "Classifiers Part 2" },
-            { id: "4-Applied", title: "Applied Classification" },
+            { id: "knn", title: "K-Nearest Neighbors", href: "/learn/classification/knn" },
+            { id: "trees", title: "Decision Trees", href: "/learn/classification/decision-trees" },
+            { id: "rf", title: "Random Forests", href: "/learn/classification/random-forest" },
+            { id: "svm", title: "SVM", href: "/learn/classification/svm" },
+            { id: "nb", title: "Naive Bayes", href: "/learn/classification/naive-bayes" },
+            { id: "gda", title: "GDA", href: "/learn/classification/gda" },
+            { id: "kernels", title: "Kernel Methods", href: "/learn/classification/kernels" },
+            { id: "multiclass", title: "Multi-class", href: "/learn/classification/multiclass" },
         ],
     },
     {
-        id: "5-clustering",
+        id: "clustering",
         title: "Clustering",
         icon: Sparkles,
         color: "#8E4C5C",
         lessons: [
-            { id: "1-Visualize", title: "Visualizing Data" },
-            { id: "2-K-Means", title: "K-Means Clustering" },
+            { id: "kmeans", title: "K-Means", href: "/learn/clustering/kmeans" },
+            { id: "gmm", title: "GMM", href: "/learn/clustering/gmm" },
+            { id: "pca", title: "PCA", href: "/learn/clustering/pca" },
+            { id: "factor", title: "Factor Analysis", href: "/learn/clustering/factor-analysis" },
         ],
     },
     {
-        id: "6-nlp",
-        title: "NLP",
-        icon: MessageSquare,
-        color: "#D4823A",
-        lessons: [
-            { id: "1-Introduction-to-NLP", title: "Intro to NLP" },
-            { id: "2-Tasks", title: "NLP Tasks" },
-            { id: "3-Translation-Sentiment", title: "Translation & Sentiment" },
-            { id: "4-Hotel-Reviews-1", title: "Hotel Reviews 1" },
-            { id: "5-Hotel-Reviews-2", title: "Hotel Reviews 2" },
-        ],
-    },
-    {
-        id: "7-timeseries",
-        title: "Time Series",
-        icon: Clock,
-        color: "#8FA68A",
-        lessons: [
-            { id: "1-Introduction", title: "Time Series Intro" },
-            { id: "2-ARIMA", title: "ARIMA Models" },
-            { id: "3-SVR", title: "SVR Forecasting" },
-        ],
-    },
-    {
-        id: "8-reinforcement",
-        title: "Reinforcement",
-        icon: Gamepad2,
+        id: "evaluation",
+        title: "Evaluation",
+        icon: BarChart3,
         color: "#5A8A88",
         lessons: [
-            { id: "1-QLearning", title: "Q-Learning" },
-            { id: "2-Gym", title: "OpenAI Gym" },
+            { id: "split", title: "Train/Test Split", href: "/learn/evaluation/splitting" },
+            { id: "bias", title: "Bias-Variance", href: "/learn/evaluation/bias-variance" },
+            { id: "metrics", title: "Metrics & ROC", href: "/learn/evaluation/metrics" },
+            { id: "cv", title: "Cross-Validation", href: "/learn/evaluation/cross-validation" },
         ],
     },
     {
-        id: "9-real-world",
-        title: "Real World",
-        icon: Lightbulb,
+        id: "optimization",
+        title: "Optimization",
+        icon: Brain,
+        color: "#D4823A",
+        lessons: [
+            { id: "loss", title: "Loss Functions", href: "/learn/optimization/loss-functions" },
+            { id: "gd", title: "Gradient Descent", href: "/learn/optimization/gradient-descent" },
+            { id: "backprop", title: "Backpropagation", href: "/learn/optimization/backprop" },
+            { id: "nn", title: "Neural Networks", href: "/learn/optimization/neural-networks" },
+            { id: "dl", title: "Deep Learning", href: "/learn/optimization/deep-learning" },
+        ],
+    },
+    {
+        id: "nlp",
+        title: "NLP",
+        icon: MessageSquare,
+        color: "#8FA68A",
+        lessons: [
+            { id: "tokenization", title: "Tokenization", href: "/learn/nlp/tokenization" },
+            { id: "tfidf", title: "TF-IDF", href: "/learn/nlp/tfidf" },
+            { id: "sentiment", title: "Sentiment Analysis", href: "/learn/nlp/sentiment" },
+        ],
+    },
+    {
+        id: "timeseries",
+        title: "Time Series",
+        icon: Clock,
+        color: "#5A8A88",
+        lessons: [
+            { id: "basics", title: "Time Series Basics", href: "/learn/timeseries/basics" },
+            { id: "arima", title: "ARIMA", href: "/learn/timeseries/arima" },
+        ],
+    },
+    {
+        id: "ethics",
+        title: "ML Ethics",
+        icon: Shield,
         color: "#C4897A",
         lessons: [
-            { id: "1-Applications", title: "ML Applications" },
-            { id: "2-Debugging-ML-Models", title: "Debugging Models" },
+            { id: "bias", title: "Bias in ML", href: "/learn/ethics/bias" },
+            { id: "data", title: "Data Ethics", href: "/learn/ethics/data-ethics" },
+            { id: "xai", title: "Explainable AI", href: "/learn/ethics/explainability" },
         ],
     },
 ];
 
 export default function Sidebar() {
     const pathname = usePathname();
-    const [expandedSections, setExpandedSections] = useState<string[]>(["1-introduction"]);
+    const [expandedSections, setExpandedSections] = useState<string[]>(["foundations"]);
     const [mobileOpen, setMobileOpen] = useState(false);
 
     const toggleSection = (sectionId: string) => {
@@ -133,8 +143,8 @@ export default function Sidebar() {
         );
     };
 
-    const isActive = (sectionId: string, lessonId: string) => {
-        return pathname === `/lessons/${sectionId}/${lessonId}`;
+    const isActive = (href: string) => {
+        return pathname === href;
     };
 
     return (
@@ -201,11 +211,11 @@ export default function Sidebar() {
                                     {isExpanded && (
                                         <div className="ml-4 mt-1 space-y-0.5 border-l-2 pl-3" style={{ borderColor: '#E8DDD0' }}>
                                             {section.lessons.map((lesson, idx) => {
-                                                const active = isActive(section.id, lesson.id);
+                                                const active = isActive(lesson.href);
                                                 return (
                                                     <Link
                                                         key={lesson.id}
-                                                        href={`/lessons/${section.id}/${lesson.id}`}
+                                                        href={lesson.href}
                                                         onClick={() => setMobileOpen(false)}
                                                         className="block px-3 py-2 rounded-lg text-sm transition-all"
                                                         style={{
@@ -232,7 +242,7 @@ export default function Sidebar() {
                     {/* Download PDF */}
                     <div className="mt-8 pt-6 border-t" style={{ borderColor: '#E8DDD0' }}>
                         <a
-                            href="/pdf/readme.pdf"
+                            href="/pdf/main_notes.pdf"
                             download
                             className="flex items-center gap-3 px-3 py-2.5 rounded-lg transition-all"
                             style={{ color: '#5D4E3C' }}
