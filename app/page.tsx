@@ -105,8 +105,8 @@ const features = [
   },
   {
     icon: Users,
-    title: "By Microsoft",
-    description: "Created by the Azure Cloud Advocates team",
+    title: "Community Driven",
+    description: "Open source curriculum for everyone",
     color: "#5A8A88",
   },
   {
@@ -260,11 +260,11 @@ export default function Home() {
         <div className="max-w-5xl mx-auto text-center">
           <p className="text-base text-[#8B7355]">
             Built with ❤️ by{" "}
-            <a href="https://github.com/microsoft/ML-For-Beginners"
+            <a href="https://github.com/aman67032/Machine-Learning-Learn-Mind"
               target="_blank"
               rel="noopener noreferrer"
               className="font-medium hover:underline text-[#D4823A]">
-              Microsoft Cloud Advocates
+              ML Learn Mind Team
             </a>
           </p>
         </div>

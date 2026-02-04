@@ -324,6 +324,63 @@ print(f"Centroids:\\n{centroids}")`}
                         </div>
                     </section>
 
+                    {/* Section 5: Hands-on Exercise */}
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 font-serif text-[#3D3128] flex items-center gap-3">
+                            <span className="w-10 h-10 rounded-full bg-[#FEF3E7] flex items-center justify-center text-lg">5</span>
+                            Hands-on: Music Genres 🎵
+                        </h2>
+
+                        <div className="rounded-2xl p-6 bg-white border border-[#E8DDD0] mb-6">
+                            <p className="text-[#5D4E3C] text-lg leading-relaxed mb-4">
+                                In the <strong>ML-For-Beginners</strong> curriculum, we explore clustering songs!
+                                Using a dataset of Nigerian songs, we group them by audio features.
+                            </p>
+
+                            <div className="bg-[#F8F0F2] rounded-xl p-4 border border-[#8E4C5C] mb-6">
+                                <h4 className="font-bold text-[#8E4C5C] mb-2">The Challenge</h4>
+                                <p className="text-[#5D4E3C] text-sm">
+                                    We use features like <code>acousticness</code>, <code>danceability</code>, and <code>loudness</code>.
+                                    How many genres (clusters) are there? We use the <strong>Elbow Method</strong>.
+                                </p>
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-4 text-[#3D3128] flex items-center gap-2">
+                                <Code className="w-5 h-5 text-[#D4823A]" />
+                                Scikit-Learn Solution
+                            </h3>
+
+                            <div className="bg-[#2D2520] rounded-xl p-6 overflow-x-auto">
+                                <pre className="text-[#E8DDD0] font-mono text-sm">
+                                    {`from sklearn.cluster import KMeans
+import matplotlib.pyplot as plt
+import seaborn as sns
+
+# 1. Find optimal K (Elbow Method)
+wcss = []
+for i in range(1, 11):
+    kmeans = KMeans(n_clusters=i, init='k-means++', random_state=42)
+    kmeans.fit(X)
+    wcss.append(kmeans.inertia_)
+
+# 2. Plotting (The "Elbow" appears at K=3)
+sns.lineplot(x=range(1, 11), y=wcss)
+
+# 3. Train final model
+kmeans = KMeans(n_clusters=3)
+clusters = kmeans.fit_predict(X)
+
+# 4. Evaluate (Silhouette Score: 0.53)
+# Indicates moderate separation between genres!`}
+                                </pre>
+                            </div>
+
+                            <p className="text-[#5D4E3C] mt-4 text-sm">
+                                We discovered 3 distinct clusters that roughly align with musical genres!
+                            </p>
+                        </div>
+                    </section>
+
                     {/* Common Pitfalls */}
                     <section className="rounded-2xl p-6 bg-[#FBF3F1] border border-[#C4897A]">
                         <h2 className="text-xl font-bold mb-4 text-[#C4897A]">⚠️ K-Means Pitfalls</h2>

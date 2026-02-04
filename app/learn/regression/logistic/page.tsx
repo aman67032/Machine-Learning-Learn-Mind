@@ -351,6 +351,66 @@ print(f"\\nLearned weights: {theta}")`}
                         </div>
                     </section>
 
+                    {/* Section 6: Hands-on Exercise */}
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 font-serif text-[#3D3128] flex items-center gap-3">
+                            <span className="w-10 h-10 rounded-full bg-[#FEF3E7] flex items-center justify-center text-lg">6</span>
+                            Hands-on: Cuisine Prediction 🥘
+                        </h2>
+
+                        <div className="rounded-2xl p-6 bg-white border border-[#E8DDD0] mb-6">
+                            <p className="text-[#5D4E3C] text-lg leading-relaxed mb-4">
+                                In the <strong>ML-For-Beginners</strong> curriculum, we tackle a delicious problem:
+                                <em>predicting national cuisines based on ingredients!</em>
+                            </p>
+
+                            <div className="bg-[#F8F0F2] rounded-xl p-4 border border-[#8E4C5C] mb-6">
+                                <h4 className="font-bold text-[#8E4C5C] mb-2">The Challenge</h4>
+                                <p className="text-[#5D4E3C] text-sm">
+                                    We have 5 cuisines: Thai, Japanese, Chinese, Indian, and Korean.
+                                    This is a <strong>Multi-class Classification</strong> problem.
+                                    We use the <strong>One-vs-Rest (OvR)</strong> strategy with Logistic Regression.
+                                </p>
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-4 text-[#3D3128] flex items-center gap-2">
+                                <Code className="w-5 h-5 text-[#D4823A]" />
+                                Scikit-Learn Solution
+                            </h3>
+
+                            <div className="bg-[#2D2520] rounded-xl p-6 overflow-x-auto">
+                                <pre className="text-[#E8DDD0] font-mono text-sm">
+                                    {`from sklearn.linear_model import LogisticRegression
+from sklearn.model_selection import train_test_split
+import pandas as pd
+
+# 1. Setup the model
+# multi_class='ovr': Train binary classifiers for each cuisine vs rest
+# solver='liblinear': Good for small datasets & OvR
+lr = LogisticRegression(multi_class='ovr', solver='liblinear')
+
+# 2. Train (X=ingredients, y=cuisine_label)
+model = lr.fit(X_train, y_train)
+
+# 3. Test a prediction
+# Input: ['cilantro', 'onion', 'pea', 'potato', 'tomato', 'vegetable_oil']
+prediction = model.predict(test_data)
+# Output: 'indian' 🍛`}
+                                </pre>
+                            </div>
+
+                            <div className="mt-6 bg-[#FEF3E7] rounded-xl p-4 border border-[#E6A04F]">
+                                <p className="text-[#D4823A] font-bold mb-2">Why OvR?</p>
+                                <p className="text-[#5D4E3C] text-sm">
+                                    Logistic Regression is naturally binary (0 or 1). For 5 cuisines, Scikit-learn trains 5 separate binary classifiers:
+                                    <br />1. Indian vs Not Indian
+                                    <br />2. Thai vs Not Thai
+                                    <br />...and so on. The class with the highest probability wins!
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+
                     {/* Summary */}
                     <section className="rounded-2xl p-8 bg-gradient-to-br from-[#5D4E3C] to-[#3D3128] text-white">
                         <h2 className="text-2xl font-bold mb-6 font-serif flex items-center gap-3">

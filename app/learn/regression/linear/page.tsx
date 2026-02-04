@@ -360,6 +360,59 @@ print(f"\\nLine equation: y = {theta0:.2f} + {theta1:.2f}x")`}
                         </div>
                     </section>
 
+                    {/* Section 5: Hands-on Exercise */}
+                    <section>
+                        <h2 className="text-3xl font-bold mb-6 font-serif text-[#3D3128] flex items-center gap-3">
+                            <span className="w-10 h-10 rounded-full bg-[#FEF3E7] flex items-center justify-center text-lg">5</span>
+                            Hands-on: Pumpkin Pricing 🎃
+                        </h2>
+
+                        <div className="rounded-2xl p-6 bg-white border border-[#E8DDD0] mb-6">
+                            <p className="text-[#5D4E3C] text-lg leading-relaxed mb-4">
+                                Let&apos;s apply what we learned! In the <strong>ML-For-Beginners</strong> curriculum, we use a dataset
+                                of US pumpkin prices. The goal is to predict the price of a pumpkin based on its sale month.
+                            </p>
+
+                            <div className="bg-[#F8F0F2] rounded-xl p-4 border border-[#8E4C5C] mb-6">
+                                <h4 className="font-bold text-[#8E4C5C] mb-2">The Challenge</h4>
+                                <p className="text-[#5D4E3C] text-sm">
+                                    Pumpkin prices are seasonal. A straight line doesn&apos;t fit well because prices rise and fall!
+                                    Calculated correlation is small (-0.15). We need <strong>Polynomial Regression</strong>.
+                                </p>
+                            </div>
+
+                            <h3 className="text-xl font-bold mb-4 text-[#3D3128] flex items-center gap-2">
+                                <Code className="w-5 h-5 text-[#D4823A]" />
+                                Scikit-Learn Solution
+                            </h3>
+
+                            <div className="bg-[#2D2520] rounded-xl p-6 overflow-x-auto">
+                                <pre className="text-[#E8DDD0] font-mono text-sm">
+                                    {`from sklearn.preprocessing import PolynomialFeatures
+from sklearn.pipeline import make_pipeline
+from sklearn.linear_model import LinearRegression
+
+# 1. Create a pipeline
+# PolynomialFeatures(2) adds squared terms (x^2) to capture curves
+pipeline = make_pipeline(PolynomialFeatures(2), LinearRegression())
+
+# 2. Train the model
+# X_train is 'DayOfYear', y_train is 'Price'
+pipeline.fit(X_train, y_train)
+
+# 3. Evaluate
+score = pipeline.score(X_test, y_test)
+print(f"Model Accuracy (R²): {score:.2%}")`}
+                                </pre>
+                            </div>
+
+                            <p className="text-[#5D4E3C] mt-4 text-sm">
+                                By adding <code>x²</code> (polynomial features), we allow the model to fit a curve (parabola) instead of a straight line.
+                                This improves accuracy significantly for seasonal data like produce prices!
+                            </p>
+                        </div>
+                    </section>
+
                     {/* Summary */}
                     <section className="rounded-2xl p-8 bg-gradient-to-br from-[#5D4E3C] to-[#3D3128] text-white">
                         <h2 className="text-2xl font-bold mb-6 font-serif flex items-center gap-3">

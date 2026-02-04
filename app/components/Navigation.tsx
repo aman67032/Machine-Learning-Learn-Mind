@@ -13,12 +13,11 @@ export default function Navigation() {
                 <div className="flex justify-between items-center h-16">
                     {/* Logo */}
                     <Link href="/" className="flex items-center gap-3">
-                        <div className="w-10 h-10 rounded-xl flex items-center justify-center bg-gradient-to-br from-[#D4823A] to-[#E6A04F]">
-                            <BookOpen className="w-6 h-6 text-white" />
+                        <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
+                            <img src="/LOGO.png" alt="ML Learn Mind Logo" className="w-full h-full object-cover" />
                         </div>
                         <div className="hidden sm:block">
-                            <h1 className="text-lg font-bold font-serif text-[#5D4E3C]">ML For Beginners</h1>
-                            <p className="text-xs text-[#8B7355]">by Microsoft</p>
+                            <h1 className="text-lg font-bold font-serif text-[#5D4E3C]">ML Learn Mind</h1>
                         </div>
                     </Link>
 
@@ -43,7 +42,7 @@ export default function Navigation() {
                             Setup
                         </Link>
                         <a
-                            href="https://github.com/microsoft/ML-For-Beginners"
+                            href="https://github.com/aman67032/Machine-Learning-Learn-Mind"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-[#5D4E3C] hover:text-[#D4823A] transition-colors"
@@ -115,7 +114,7 @@ export default function Navigation() {
                             Setup
                         </Link>
                         <a
-                            href="https://github.com/microsoft/ML-For-Beginners"
+                            href="https://github.com/aman67032/Machine-Learning-Learn-Mind"
                             target="_blank"
                             rel="noopener noreferrer"
                             className="flex items-center gap-2 text-[#5D4E3C] hover:text-[#D4823A] py-2"
