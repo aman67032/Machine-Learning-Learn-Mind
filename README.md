@@ -1,36 +1,122 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🧠 Machine Learning - Learn Mind
 
-## Getting Started
+An interactive, beautifully designed **Machine Learning curriculum** built with Next.js. Learn ML concepts from foundations to deep learning with visual explanations, math formulas, and Python code examples.
 
-First, run the development server:
+![ML Learn Mind](public/images/sections/ml.gif)
+
+## ✨ Features
+
+- 📚 **38 comprehensive lessons** covering all ML fundamentals
+- 🎨 **Warm, study-friendly theme** with cozy aesthetics
+- 📐 **Mathematical rigor** with clean formula presentation
+- 🐍 **Python code examples** using scikit-learn, PyTorch, NumPy
+- 📊 **Visual explanations** and intuitive diagrams
+- 📱 **Fully responsive** design
+
+## 📖 Curriculum
+
+### Unit I: Foundations & Regression
+- ML Overview & Learning Paradigms
+- Linear & Logistic Regression
+- Polynomial Regression
+- Generalized Linear Models (GLMs)
+- Multi-class Classification (Softmax)
+
+### Unit II: Classification
+- K-Nearest Neighbors (KNN)
+- Decision Trees & Random Forests
+- Support Vector Machines (SVM)
+- Naive Bayes (with Laplace Smoothing)
+- Gaussian Discriminant Analysis (GDA)
+- Kernel Methods
+
+### Unit III: Clustering & Evaluation
+- K-Means Clustering
+- Gaussian Mixture Models (GMM)
+- PCA & Dimensionality Reduction
+- Factor Analysis
+- Bias-Variance Tradeoff
+- Cross-Validation & Metrics
+
+### Unit IV: Optimization & Deep Learning
+- Loss Functions
+- Gradient Descent Variants
+- Backpropagation
+- Neural Networks
+- Introduction to Deep Learning
+
+### Unit V: Ethics
+- Bias in Machine Learning
+- Data Collection Ethics
+- Explainable AI (XAI)
+
+### Extras
+- NLP: Tokenization, TF-IDF, Sentiment Analysis
+- Time Series: Basics, ARIMA Models
+
+## 🚀 Getting Started
 
 ```bash
+# Clone the repository
+git clone https://github.com/aman67032/Machine-Learning-Learn-Mind.git
+
+# Navigate to project
+cd Machine-Learning-Learn-Mind
+
+# Install dependencies
+npm install
+
+# Run development server
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) to view the app.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Framework:** Next.js 14 (App Router)
+- **Styling:** CSS with custom design system
+- **Icons:** Lucide React
+- **Fonts:** Custom serif + sans-serif typography
 
-## Learn More
+## 📁 Project Structure
 
-To learn more about Next.js, take a look at the following resources:
+```
+ml_web/
+├── app/
+│   ├── learn/           # All learning pages
+│   │   ├── foundations/ # Math, Python, Overview
+│   │   ├── regression/  # Linear, Logistic, GLM
+│   │   ├── classification/ # KNN, Trees, SVM, NB
+│   │   ├── clustering/  # K-Means, GMM, PCA
+│   │   ├── evaluation/  # Metrics, CV, Splitting
+│   │   ├── optimization/# Loss, GD, Neural Nets
+│   │   ├── nlp/         # Tokenization, TF-IDF
+│   │   ├── timeseries/  # ARIMA, Basics
+│   │   └── ethics/      # Bias, XAI
+│   ├── page.tsx         # Home page
+│   └── globals.css      # Global styles
+├── public/
+│   ├── images/          # Sketchnotes & visuals
+│   └── pdf/             # Reference materials
+└── README.md
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📸 Screenshots
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+| Home Page | Learning Path |
+|-----------|---------------|
+| Warm, inviting landing | Organized curriculum |
 
-## Deploy on Vercel
+## 🎓 Based On
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- Stanford CS229 Machine Learning course notes
+- ML for Beginners curriculum concepts
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 License
+
+MIT License - feel free to use for learning!
+
+---
+
+Made with ❤️ for ML learners everywhere
