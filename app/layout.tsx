@@ -5,11 +5,15 @@ import ClientLayout from "./components/ClientLayout";
 export const metadata: Metadata = {
   metadataBase: new URL('https://ml-learn-mind.vercel.app'),
   title: {
-    default: "ML Learn Mind | Interactive Machine Learning Curriculum (Beta)",
+    default: "ML Learn Mind | ML Basics, Lectures & Learning Curriculum (Beta)",
     template: "%s | ML Learn Mind"
   },
-  description: "Join the ML Learn Mind (Beta) curriculum. Free, open-source machine learning course with hands-on Python projects, Scikit-learn tutorials, and sketchnotes. Perfect for beginners.",
-  keywords: ["Machine Learning", "Python", "Scikit-learn", "Data Science", "AI", "Free Course", "Interactive Learning", "Beginner Friendly"],
+  description: "The best place to learn ML basics. Free ML lectures, interactive lessons, and a complete open-source curriculum. Perfect for beginners starting their ML learn journey.",
+  keywords: [
+    "ML Basic", "ML Learn", "ML Lecture",
+    "Machine Learning Basics", "Learn Machine Learning", "Machine Learning Lectures",
+    "Python", "Scikit-learn", "Data Science", "AI", "Free Course"
+  ],
   authors: [{ name: "ML Learn Mind Team", url: "https://github.com/aman67032" }],
   creator: "ML Learn Mind Team",
   publisher: "ML Learn Mind",

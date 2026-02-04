@@ -18,7 +18,7 @@ import {
 const sections = [
   {
     id: "1-introduction",
-    title: "Introduction to ML",
+    title: "ML Basics: Introduction",
     lessons: 4,
     icon: BookOpen,
     color: "#D4823A",
@@ -156,16 +156,16 @@ export default function Home() {
           </div>
 
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 font-serif text-[#3D3128] leading-tight">
-            Machine Learning
+            ML Basics & Lectures
             <br />
             <span className="bg-gradient-to-r from-[#D4823A] to-[#E6A04F] bg-clip-text text-transparent">
-              For Beginners
+              Learn Machine Learning
             </span>
           </h1>
 
           <p className="text-xl sm:text-2xl mb-10 max-w-2xl mx-auto text-[#5D4E3C] leading-relaxed">
-            A comprehensive 12-week, 26-lesson curriculum covering classic machine learning
-            using Python and Scikit-learn. Join our <strong>Beta Phase</strong> and start learning today.
+            Your free <strong>ML learn</strong> hub. Access comprehensive <strong>ML lectures</strong> covering classic algorithms,
+            Python basics, and Scikit-learn. Join our <strong>Beta Phase</strong> today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
