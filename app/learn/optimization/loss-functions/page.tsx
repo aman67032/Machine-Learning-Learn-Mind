@@ -189,7 +189,7 @@ export default function LossFunctionsPage() {
                                 <h3 className="text-xl font-bold mb-4 text-[#8FA68A]">Binary Cross-Entropy (Log Loss)</h3>
 
                                 <div className="bg-[#2D2520] rounded-xl p-6 mb-4">
-                                    <p className="text-[#E8DDD0] font-mono text-sm mb-2">For binary classification (y ∈ {0, 1}):</p>
+                                    <p className="text-[#E8DDD0] font-mono text-sm mb-2">For binary classification (y ∈ &#123;0, 1&#125;):</p>
                                     <p className="text-[#E6A04F] font-mono text-lg text-center">
                                         BCE = -[y×log(p) + (1-y)×log(1-p)]
                                     </p>
@@ -225,7 +225,7 @@ export default function LossFunctionsPage() {
                                 <h3 className="text-xl font-bold mb-4 text-[#8E4C5C]">Hinge Loss (SVM)</h3>
 
                                 <div className="bg-[#2D2520] rounded-xl p-6 mb-4">
-                                    <p className="text-[#E8DDD0] font-mono text-sm mb-2">For margin-based classifiers (y ∈ {-1, +1}):</p>
+                                    <p className="text-[#E8DDD0] font-mono text-sm mb-2">For margin-based classifiers (y ∈ &#123;-1, +1&#125;):</p>
                                     <p className="text-[#E6A04F] font-mono text-lg text-center">
                                         L = max(0, 1 - y × ŷ)
                                     </p>
