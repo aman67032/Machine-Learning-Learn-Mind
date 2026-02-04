@@ -118,8 +118,29 @@ const features = [
 ];
 
 export default function Home() {
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@type': 'Course',
+    name: 'Machine Learning For Beginners',
+    description: 'A comprehensive 12-week curriculum to learn classic machine learning with Python and Scikit-learn.',
+    provider: {
+      '@type': 'Organization',
+      name: 'ML Learn Mind',
+      sameAs: 'https://github.com/aman67032/Machine-Learning-Learn-Mind'
+    },
+    educationalLevel: 'Beginner',
+    isAccessibleForFree: true,
+    inLanguage: 'en',
+    learningResourceType: 'Course',
+    url: 'https://ml-learn-mind.vercel.app'
+  };
+
   return (
     <div className="min-h-screen">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
       {/* Hero Section */}
       <section className="relative py-20 px-4 sm:px-6 lg:px-8 overflow-hidden">
         {/* Background decoration */}
@@ -144,7 +165,7 @@ export default function Home() {
 
           <p className="text-xl sm:text-2xl mb-10 max-w-2xl mx-auto text-[#5D4E3C] leading-relaxed">
             A comprehensive 12-week, 26-lesson curriculum covering classic machine learning
-            using Python and Scikit-learn. Perfect for beginners ready to dive in.
+            using Python and Scikit-learn. Join our <strong>Beta Phase</strong> and start learning today.
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

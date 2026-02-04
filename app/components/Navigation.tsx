@@ -16,8 +16,11 @@ export default function Navigation() {
                         <div className="w-10 h-10 rounded-xl flex items-center justify-center overflow-hidden">
                             <img src="/LOGO.png" alt="ML Learn Mind Logo" className="w-full h-full object-cover" />
                         </div>
-                        <div className="hidden sm:block">
+                        <div className="hidden sm:flex items-center gap-2">
                             <h1 className="text-lg font-bold font-serif text-[#5D4E3C]">ML Learn Mind</h1>
+                            <span className="px-2 py-0.5 rounded-full bg-[#E6F4F1] text-[#5A8A88] text-xs font-semibold border border-[#5A8A88]/20">
+                                Beta
+                            </span>
                         </div>
                     </Link>
 

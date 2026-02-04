@@ -444,10 +444,10 @@ clusters = kmeans.fit_predict(X)
                         Logistic Regression
                     </Link>
                     <Link
-                        href="/learn"
+                        href="/learn/clustering/gmm"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#D4823A] to-[#E6A04F] hover:shadow-lg transition-all"
                     >
-                        Back to Learning Path
+                        Next: Gaussian Mixture Models (GMM)
                         <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>

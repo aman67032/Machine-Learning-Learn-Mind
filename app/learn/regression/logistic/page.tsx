@@ -446,10 +446,10 @@ prediction = model.predict(test_data)
                         Linear Regression
                     </Link>
                     <Link
-                        href="/learn/classification/knn"
+                        href="/learn/regression/polynomial"
                         className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#D4823A] to-[#E6A04F] hover:shadow-lg transition-all"
                     >
-                        Next: K-Nearest Neighbors
+                        Next: Polynomial Regression
                         <ArrowRight className="w-5 h-5" />
                     </Link>
                 </div>

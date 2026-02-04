@@ -97,7 +97,7 @@ export default function MLBiasPage() {
                 </article>
 
                 <div className="flex justify-between items-center pt-8 mt-12 border-t border-[#E8DDD0]">
-                    <Link href="/learn" className="inline-flex items-center gap-2 text-[#8B7355] hover:text-[#D4823A]"><ArrowLeft className="w-4 h-4" />Back to Learning Path</Link>
+                    <Link href="/learn/timeseries/arima" className="inline-flex items-center gap-2 text-[#8B7355] hover:text-[#D4823A]"><ArrowLeft className="w-4 h-4" />ARIMA Models</Link>
                     <Link href="/learn/ethics/data-ethics" className="inline-flex items-center gap-2 px-6 py-3 rounded-xl font-semibold text-white bg-gradient-to-r from-[#D4823A] to-[#E6A04F]">Next: Data Ethics<ArrowRight className="w-5 h-5" /></Link>
                 </div>
             </div>
