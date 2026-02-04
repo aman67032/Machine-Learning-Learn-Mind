@@ -19,6 +19,11 @@ export default function MLBiasPage() {
                     </p>
                 </div>
 
+                {/* Sketchnote */}
+                <div className="mb-10 rounded-2xl overflow-hidden border border-[#E8DDD0] shadow-md">
+                    <img src="/sketchnotes/ml-fairness.png" alt="ML Fairness Sketchnote" className="w-full h-auto" />
+                </div>
+
                 <div className="rounded-2xl p-6 mb-10 bg-[#FFFBF7] border border-[#E8DDD0]">
                     <h2 className="font-bold text-lg mb-4 flex items-center gap-2 font-serif text-[#3D3128]">
                         <Target className="w-5 h-5 text-[#D4823A]" />What You&apos;ll Learn
