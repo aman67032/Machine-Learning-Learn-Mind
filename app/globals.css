@@ -1,26 +1,374 @@
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:wght@300;400;700&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
+  /* Warm Study Theme Colors */
+  --warm-cream: #FDF8F3;
+  --warm-beige: #F5EDE4;
+  --warm-tan: #E8DDD0;
+  --warm-brown: #8B7355;
+  --warm-coffee: #5D4E3C;
+  --warm-dark: #3D3128;
+  --warm-orange: #D4823A;
+  --warm-amber: #E6A04F;
+  --warm-sage: #8FA68A;
+  --warm-teal: #5A8A88;
+  --warm-rose: #C4897A;
+  --warm-burgundy: #8E4C5C;
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  /* Font families */
+  --font-heading: 'Merriweather', Georgia, serif;
+  --font-body: 'Source Sans 3', -apple-system, sans-serif;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-body);
+  background-color: var(--warm-cream);
+  color: var(--warm-dark);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-heading);
+}
+
+/* Custom scrollbar - warm theme */
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--warm-beige);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--warm-tan);
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--warm-brown);
+}
+
+/* Markdown content styles - warm & readable */
+.markdown-content {
+  line-height: 1.9;
+  font-size: 1.15rem;
+}
+
+.markdown-content h1 {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--warm-coffee);
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 2px solid var(--warm-tan);
+}
+
+.markdown-content h2 {
+  font-family: var(--font-heading);
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--warm-coffee);
+  margin-bottom: 1rem;
+  margin-top: 2rem;
+}
+
+.markdown-content h3 {
+  font-family: var(--font-heading);
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--warm-brown);
+  margin-bottom: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+.markdown-content h4 {
+  font-family: var(--font-heading);
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--warm-brown);
+  margin-bottom: 0.5rem;
+  margin-top: 1rem;
+}
+
+.markdown-content p {
+  color: var(--warm-dark);
+  margin-bottom: 1.25rem;
+  line-height: 1.85;
+}
+
+.markdown-content ul {
+  list-style-type: disc;
+  list-style-position: inside;
+  margin-bottom: 1.25rem;
+  color: var(--warm-dark);
+}
+
+.markdown-content ol {
+  list-style-type: decimal;
+  list-style-position: inside;
+  margin-bottom: 1.25rem;
+  color: var(--warm-dark);
+}
+
+.markdown-content li {
+  line-height: 1.85;
+  margin-bottom: 0.5rem;
+}
+
+.markdown-content a {
+  color: var(--warm-teal);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s;
+}
+
+.markdown-content a:hover {
+  color: var(--warm-orange);
+}
+
+.markdown-content blockquote {
+  border-left: 4px solid var(--warm-amber);
+  background: linear-gradient(135deg, #FEF9F3 0%, #FDF3E7 100%);
+  padding: 1rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  color: var(--warm-coffee);
+  font-style: italic;
+}
+
+.markdown-content code:not(pre code) {
+  background-color: var(--warm-beige);
+  color: var(--warm-burgundy);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-size: 0.9em;
+  font-family: 'Fira Code', 'Consolas', monospace;
+}
+
+.markdown-content pre {
+  background: linear-gradient(145deg, #2D2520 0%, #1F1A16 100%);
+  color: #E8DDD0;
+  padding: 1.5rem;
+  border-radius: 12px;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+  font-size: 0.9rem;
+  box-shadow: 0 4px 20px rgba(61, 49, 40, 0.15);
+  border: 1px solid rgba(139, 115, 85, 0.2);
+}
+
+.markdown-content pre code {
+  background: transparent;
+  color: inherit;
+  padding: 0;
+}
+
+.markdown-content img {
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(61, 49, 40, 0.1);
+  margin: 1.5rem auto;
+  max-width: 100%;
+  height: auto;
+}
+
+.markdown-content hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--warm-tan), transparent);
+  margin: 2.5rem 0;
+}
+
+.markdown-content table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.5rem 0;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(61, 49, 40, 0.08);
+}
+
+.markdown-content th {
+  background: linear-gradient(135deg, var(--warm-tan) 0%, var(--warm-beige) 100%);
+  padding: 0.875rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  color: var(--warm-coffee);
+  border: 1px solid var(--warm-tan);
+}
+
+.markdown-content td {
+  padding: 0.875rem 1rem;
+  border: 1px solid var(--warm-tan);
+  background: white;
+}
+
+/* Code block wrapper */
+.code-block-wrapper {
+  position: relative;
+}
+
+.code-copy-btn {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  background: var(--warm-brown);
+  color: white;
+  padding: 0.375rem 0.75rem;
+  border-radius: 6px;
+  font-size: 0.75rem;
+  transition: background 0.2s;
+  cursor: pointer;
+  border: none;
+}
+
+.code-copy-btn:hover {
+  background: var(--warm-orange);
+}
+
+/* Quiz link styles - warm */
+.quiz-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: linear-gradient(135deg, var(--warm-orange) 0%, var(--warm-amber) 100%);
+  color: white;
+  padding: 0.75rem 1.25rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s;
+  box-shadow: 0 4px 15px rgba(212, 130, 58, 0.25);
+}
+
+.quiz-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 130, 58, 0.35);
+}
+
+/* Section card - warm study theme */
+.section-card {
+  background: white;
+  border-radius: 16px;
+  padding: 1.5rem;
+  border: 1px solid var(--warm-tan);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(61, 49, 40, 0.05);
+}
+
+.section-card:hover {
+  border-color: var(--warm-amber);
+  box-shadow: 0 8px 30px rgba(212, 130, 58, 0.15);
+  transform: translateY(-4px);
+}
+
+/* Lesson navigation buttons */
+.lesson-nav-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  border-radius: 12px;
+  border: 2px solid var(--warm-tan);
+  background: white;
+  transition: all 0.2s;
+}
+
+.lesson-nav-btn:hover {
+  border-color: var(--warm-orange);
+  background: var(--warm-beige);
+}
+
+/* Sidebar active state */
+.sidebar-item-active {
+  background: linear-gradient(135deg, var(--warm-beige) 0%, var(--warm-cream) 100%);
+  color: var(--warm-orange);
+  border-left: 4px solid var(--warm-orange);
+  font-weight: 600;
+}
+
+/* Progress indicators */
+.progress-dot {
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 50%;
+}
+
+.progress-dot-complete {
+  background-color: var(--warm-sage);
+}
+
+.progress-dot-current {
+  background-color: var(--warm-orange);
+  animation: pulse 2s infinite;
+}
+
+.progress-dot-pending {
+  background-color: var(--warm-tan);
+}
+
+@keyframes pulse {
+
+  0%,
+  100% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+}
+
+/* Warm button styles */
+.btn-primary {
+  background: linear-gradient(135deg, var(--warm-orange) 0%, var(--warm-amber) 100%);
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.3s;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(212, 130, 58, 0.25);
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 130, 58, 0.35);
+}
+
+.btn-secondary {
+  background: white;
+  color: var(--warm-coffee);
+  padding: 0.75rem 1.5rem;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s;
+  border: 2px solid var(--warm-tan);
+  cursor: pointer;
+}
+
+.btn-secondary:hover {
+  border-color: var(--warm-orange);
+  color: var(--warm-orange);
+}
+
+/* Study-friendly focus states */
+:focus-visible {
+  outline: 3px solid var(--warm-amber);
+  outline-offset: 2px;
+}
+
+/* Selection color */
+::selection {
+  background: var(--warm-amber);
+  color: white;
 }
